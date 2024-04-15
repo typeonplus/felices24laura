@@ -1,165 +1,123 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-h1 {
-  font-family: Solitreo;
-}
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 
 body {
-  height: 100vh;
-  width: 100vw;
-  background: #fee2e9;
-  font-family: "Pangolin", cursive;
-  font-size: 1vmin;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	font-family: 'Indie Flower', cursive !important;
+  background: #FDE3A7;
+	margin: 0px;
+	padding: 0px;
 }
 
-.container {
-  position: relative;
-  top: 0vmin;
+::selection {
+	background: transparent;
 }
 
-.envelope {
-  position: relative;
-  background: #f980a1;
-  height: 30vmin;
-  width: 47.9vmin;
+h4 {
+	font-size: 26px;
+	line-height: 1px;
+	font-family: 'Amatic SC', cursive !important;
 }
+
+.color1{color:#1BBC9B}
+.color2{color:#C0392B}
+
 
 .card {
-  position: absolute;
-  background: white;
-  height: 25vmin;
-  width: 43vmin;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  left: 2.5vmin;
-  top: 0vmin;
-  animation: slide-rev 0.2s ease-out;
+	color: #013243;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	height: 400px;
+	background: #e0e1dc;
+	transform-style: preserve-3d;
+	transform: translate(-50%,-50%) perspective(2000px);
+	box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5);
+	transition: 1s;
 }
 
-.message {
-  position: absolute;
-  top: 5vmin;
+.card:hover {
+	transform: translate(-50%,-50%) perspective(2000px) rotate(15deg) scale(1.2);
+	box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
 }
 
-.cover {
-  position: absolute;
-  height: 0;
-  width: 0;
-  border-bottom: 15vmin solid #fba7bd;
-  border-left: 24vmin solid transparent;
-  border-right: 24vmin solid transparent;
-  top: 15vmin;
-  z-index: 3;
+.card:before {
+	content:'';
+	position: absolute;
+	top: -5px;
+	left: 0;
+	width: 100%;
+	height: 5px;
+	background: #BAC1BA;
+	transform-origin: bottom;
+	transform: skewX(-45deg);
 }
 
-.cover::after {
-  /*left triangle*/
-  position: absolute;
-  content: "";
-  border-left: 24.5vmin solid #fcbbcc;
-  border-bottom: 15vmin solid transparent;
-  border-top: 15vmin solid transparent;
-  top: -15vmin;
-  left: -24vmin;
+.card:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: -5px;
+	width: 5px;
+	height: 100%;
+	background: #92A29C;
+	transform-origin: left;
+	transform: skewY(-45deg);
 }
 
-.cover::before {
-  position: absolute;
-  content: "";
-  border-right: 24.5vmin solid #fcbbcc;
-  border-bottom: 15vmin solid transparent;
-  border-top: 15vmin solid transparent;
-  top: -15vmin;
-  left: -0.5vmin;
+.card .imgBox {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform-origin: left;
+	transition: .7s;
 }
 
-.lid {
-  position: absolute;
-  height: 0;
-  width: 0;
-  border-top: 15vmin solid #f980a1;
-  border-left: 24vmin solid transparent;
-  border-right: 24vmin solid transparent;
-  top: 0;
-  transform-origin: top;
-  animation: open-rev 2s;
+.card .bark {
+	position: absolute;
+	background: #e0e1dc;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: .7s;
 }
 
-.container:hover .lid {
-  animation: open 0.5s;
-  animation-fill-mode: forwards;
+.card .imgBox img {
+	min-width: 250px;
+	max-height: 400px;
 }
 
-.container:hover .card {
-  animation: slide 0.2s;
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards;
+.card:hover .imgBox {
+	transform: rotateY(-135deg);
 }
 
-.shadow {
-  position: relative;
-  top: 3vmin;
-  border-radius: 50%;
-  opacity: 0.7;
-  height: 2vmin;
-  width: 48vmin;
-  background: #e8c5d0;
+.card:hover .bark {
+	opacity: 1;
+	transition: .6s;
+  box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
 }
 
-.heart {
-  position: relative;
-  width: 5vmin;
-  height: 4vmin;
-  top: 7vmin;
-  left: -1vmin;
+.card .details {
+	position: absolute;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	padding: 0 0 0 10px;
+	z-index: -1;
+	margin-top: 70px;
 }
 
-.heart:before,
-.heart:after {
-  position: absolute;
-  content: "";
-  left: 2.5vmin;
-  top: 7vim;
-  width: 2.5vmin;
-  height: 4vmin;
-  background: #f40b4a;
-  border-radius: 2.5vmin 2.5vmin 0 0;
-  transform: rotate(-45deg);
-  transform-origin: 0 100%;
+.card .details p {
+	font-size: 15px;
+	line-height: 5px;
+	transform: rotate(-10deg);
+	padding: 0 0 0 20px;
 }
 
-.heart:after {
-  left: 0;
-  transform: rotate(45deg);
-  transform-origin: 100% 100%;
+.card .details h4 {
+	text-align: center;
 }
 
-@keyframes open {
-  100% {
-    transform: rotatex(180deg);
-  }
-}
-@keyframes slide {
-  100% {
-    transform: translatey(-15vmin);
-    z-index: 2;
-  }
-}
-@keyframes open-rev {
-  from {
-    transform: rotatex(-180deg);
-  }
-}
-@keyframes slide-rev {
-  from {
-    transform: translatey(-15vmin);
-  }
+.text-right {
+	text-align: right;
 }
