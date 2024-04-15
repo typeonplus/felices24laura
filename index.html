@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>♥ FELICES 24 ♥</title>
     <link href="style.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f7d4e7;
+        }
+        #envelope {
+            width: 200px;
+            margin: 50px auto;
+        }
+        #message {
+            display: none;
+            font-size: 24px;
+            margin-top: 20px;
+            color: #ff007f;
+        }
+        button {
+            background-color: #ff007f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #e60073;
+        }
+    </style>
 </head>
 
 <body>
@@ -12,23 +42,22 @@
   <div class="container">
     <div class="envelope"></div>
     <div class="card">
-      <h1 class="message">
-Luz que irradia de ti, luminosa estrella en mi cielo,<br>
-Atractiva mirada, en tus ojos encuentro consuelo.<br>
-Única en su especie, sin comparación,<br>
-Radiante belleza que emana pasión.<br>
-<br>
-Asombroso fue verte, en cada ocasión,
-Sobre ti destacas, eres la atracción.<br>
-Hermosa y natural, como una rosa en su jardín, <br>    
-Inigualable altruismo, que siempre llevas en ti.<br>
-<br>
-Naturalidad y encanto, a mis ojos siempre resplandeces,<br>
-Encantador fue el dia en el que en mi vida apareces.<br>
-<br>
-Kawaii y adorable, como ningún otro ser,<br>
-Una cabra montesa, por siempre te querré.<br>
-Nunca dejas de brillar, como el sol al amanecer.<br>Entendiste el mensaje?<br>vuélvelo a leer :)</h1>
+      <h1 class="message"> <div id="envelope">
+        <img src="https://files.fm/f/b95msd5m45" alt="No cargó la pta imagen >:(">
+    </div>
+    <div id="message">Laura I Love You</div>
+    <button onclick="showMessage()">❤️</button>
+
+    <script>
+        function showMessage() {
+            var message = document.getElementById("message");
+            if (message.style.display === "none") {
+                message.style.display = "block";
+            } else {
+                message.style.display = "none";
+            }
+        }
+    </script></h1>
       <div class="heart"></div>
     </div>
     <div class="cover"></div>
